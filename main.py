@@ -1,8 +1,11 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 
+year = input("What decade do you want to search?")
+
+
 browser = webdriver.Chrome()
-url = 'https://letterboxd.com/films/popular/'
+url = 'https://letterboxd.com/films/popular/year/' + str(year)
 browser.get(url)
 html = browser.page_source
 soup = BeautifulSoup(html, features='html.parser')
